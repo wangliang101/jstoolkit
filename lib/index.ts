@@ -1,3 +1,3 @@
-const a: string = '12';
+import sqrt from './sqrt';
 
-export { a };
+export { sqrt };

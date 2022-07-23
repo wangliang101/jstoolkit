@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
   input: 'lib/index.ts',
@@ -16,6 +16,7 @@ export default {
     typescript({
       exclude: 'node_modules/**',
       typescript: require('typescript'),
+      useTsconfigDeclarationDir: true,
     }),
   ],
 };
