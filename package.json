@@ -1,0 +1,29 @@
+{
+  "name": "jstoolkit",
+  "version": "1.0.0",
+  "description": "a useful js tool kit",
+  "main": "dist/main.umd.js",
+  "module": "dist/main.esm.js",
+  "scripts": {
+    "build": "rollup --config",
+    "test": "jest --no-cache"
+  },
+  "author": "wliang",
+  "license": "ISC",
+  "keywords": [
+    "js",
+    "tool",
+    "utility",
+    "toolkit",
+    "toolset"
+  ],
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "rollup": "^2.77.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^28.0.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  }
+}
