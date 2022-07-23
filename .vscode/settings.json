@@ -1,0 +1,21 @@
+{
+  // 文件自动保存
+  // onFocusChange => 当前文件失去焦点后自动保存
+  // onWindowChange => 需要当前 VScode 窗口失去焦点才会自动保存
+  // afterDelay => 与 files.autoSaveDelay 配置联动，也就是在间隔多少毫秒自动保存，默认「1000毫秒」，有个小细节，如果配置了保存格式化代码，这个配置下自动保存不会格式化代码
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 2000,
+  // 配置 Tab 空格数
+  "editor.tabSize": 2,
+  // 保存自动格式化代码
+  "editor.formatOnSave": true,
+  // 粘贴自动格式化
+  "editor.formatOnPaste": true,
+  // 可以为不同语言或文档单独配置
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true
+  }
+}
