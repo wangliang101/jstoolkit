@@ -6,6 +6,7 @@
   "module": "dist/main.esm.js",
   "typings": "dist/types/modules/index.d.ts",
   "scripts": {
+    "prepare": "husky install",
     "build": "rollup --config && npm run docs",
     "test": "jest --no-cache",
     "docs": "typedoc --options typedoc.json"
