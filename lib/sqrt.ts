@@ -6,12 +6,6 @@ import { Sqrt } from '../types/index';
  * @returns the square root if `x` is non-negative or `NaN` if `x` is negative.
  */
 
-// export default function sqrt(x: number): number {
-//   return Math.sqrt(x);
-// }
-
-const sqrt: Sqrt = (x: number) => {
-  return Math.sqrt(x);
-};
+const sqrt: Sqrt = (x: number) => Math.sqrt(x);
 
 export default sqrt;
