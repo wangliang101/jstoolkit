@@ -3,10 +3,9 @@ module.exports = {
   endOfLine: 'auto',
   tabWidth: 2,
   quoteProps: 'as-needed',
-  printWidth: 400,
+  printWidth: 100,
   semi: true,
   useTabs: false,
   trailingComma: 'all',
   arrowParens: 'avoid',
-  endOfLine: 'auto',
 };

@@ -30,5 +30,6 @@ module.exports = {
         ts: 'never',
       },
     ],
+    'operator-linebreak': 0,
   },
 };
