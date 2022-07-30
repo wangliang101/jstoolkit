@@ -9,3 +9,25 @@ export type Sqrt = (x: number) => number;
  */
 
 export declare type ToFixed = (num: number, digits?: number) => string;
+
+/**
+ *
+ */
+
+type Val =
+  | string
+  | number
+  | boolean
+  | undefined
+  | symbol
+  | object
+  | []
+  | Function
+  | Date
+  | File
+  | Blob
+  | Buffer
+  | FormData
+  | ArrayBufferView;
+
+export declare type IsType = (val: Val, type: string) => boolean | string;
