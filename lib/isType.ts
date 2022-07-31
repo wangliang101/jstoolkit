@@ -26,13 +26,28 @@ function isArrayBufferView(val) {
   return result;
 }
 
+type Val =
+  | string
+  | number
+  | boolean
+  | undefined
+  | symbol
+  | object
+  | []
+  | Function
+  | Date
+  | File
+  | Blob
+  | Buffer
+  | FormData
+  | ArrayBufferView;
 /**
  *
- * @param val
- * @param type
- * @returns
+ * @param val 需要进行判断的值，值为string | number
+ * @param type 预判的类型
+ * @returns boolean/unknow type
  */
-const isType: IsType = (val, type) => {
+const isType: IsType = (val: Val, type: string) => {
   const typeObj = {
     string: '[object String]',
     number: '[object Number]',
