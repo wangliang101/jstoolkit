@@ -1,5 +1,5 @@
 {
-  "name": "jstoolkit",
+  "name": "js-toolkit",
   "version": "1.0.0",
   "description": "a useful js tool kit",
   "main": "dist/main.umd.js",
