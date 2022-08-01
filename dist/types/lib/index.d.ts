@@ -1,2 +1,4 @@
 import sqrt from './sqrt';
-export { sqrt };
+import toFixed from './toFixed';
+import isType from './isType';
+export { sqrt, toFixed, isType };
