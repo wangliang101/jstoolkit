@@ -1,6 +1,6 @@
-# jstoolkit
+# jstoolset
 
-a useful js tool kit
+a useful js tool set
 
 ## Installation
 
