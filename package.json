@@ -2,7 +2,7 @@
   "name": "jstoolset",
   "version": "1.0.0",
   "description": "a useful js tool kit",
-  "main": "dist/main.umd.js",
+  "main": "dist/main.cjs.js",
   "module": "dist/main.esm.js",
   "typings": "dist/types/modules/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "rollup --config && npm run docs",
     "test": "jest --no-cache",
     "docs": "typedoc --options typedoc.json",
-    "release": "standard-version --release-as"
+    "release": "npm run test && npm run build && standard-version --release-as"
   },
   "author": "wliang",
   "license": "ISC",
