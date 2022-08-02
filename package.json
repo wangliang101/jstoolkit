@@ -1,6 +1,6 @@
 {
   "name": "jstoolset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a useful js tool kit",
   "main": "dist/main.cjs.js",
   "module": "dist/main.esm.js",
