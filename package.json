@@ -5,6 +5,9 @@
   "main": "dist/main.cjs.js",
   "module": "dist/main.esm.js",
   "typings": "dist/types/modules/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "husky install",
     "build": "rollup --config",
@@ -21,6 +24,11 @@
     "toolkit",
     "toolset"
   ],
+  "repository": "https://github.com/wangliang101/jstoolkit.git",
+  "bugs": {
+    "url": "https://github.com/wangliang101/jstoolkit/issues",
+    "email": "wangliang4468@126.com"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
