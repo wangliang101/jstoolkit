@@ -31,8 +31,7 @@ const toFixed: ToFixed = (num, digits = 0) => {
   }
 
   // 找到需要进行四舍五入的部分
-  let numArr = zeroStrNum.match(/\d/g) || [];
-  numArr = numArr.slice(0, dotIndex + digits + 1);
+  const numArr = (zeroStrNum.match(/\d/g) || []).slice(0, dotIndex + digits + 1);
 
   // 核心处理逻辑
   if (parseInt(numArr[numArr.length - 1], 10) > 4) {

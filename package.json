@@ -11,7 +11,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "rollup --config",
-    "test": "jest --no-cache",
+    "test": "jest --no-cache --detectOpenHandles",
     "docs": "typedoc --options typedoc.json",
     "release": "standard-version --release-as"
   },

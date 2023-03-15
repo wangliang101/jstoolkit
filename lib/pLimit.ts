@@ -1,8 +1,20 @@
+import { LimitFunction } from '../types/index';
+
 type AnyFunction = (...args: any[]) => any;
 
-function pLimit(concurrency: number) {
-  if (!(Number.isInteger(concurrency) || Infinity === concurrency) && concurrency > 0) {
-    throw new Error('参数不符合要求，参数必须为正整数');
+/**
+ * Run multiple promise-returning & async functions with limited concurrency
+ * @param concurrency - Concurrency limit. Minimum: `1`.
+ * @returns Promise A `limit` function.
+ */
+function pLimit(concurrency: number): LimitFunction {
+  if (
+    !(
+      (Number.isInteger(concurrency) || concurrency === Number.POSITIVE_INFINITY) &&
+      concurrency > 0
+    )
+  ) {
+    throw new TypeError('参数不符合要求，参数必须为正整数');
   }
 
   const queue: Array<any> = [];
@@ -23,10 +35,8 @@ function pLimit(concurrency: number) {
   ) => {
     activeCount += 1;
 
-    // const result = (async () => fn(...arg))();
-    const result = fn(...arg);
-    const a = resolve(result);
-    // console.log('aa', a);
+    const result = (async () => fn(...arg))();
+    resolve(result);
     try {
       await result;
     } catch (err) {
@@ -35,15 +45,37 @@ function pLimit(concurrency: number) {
     next();
   };
 
-  const generator = <T extends AnyFunction>(fn: T, ...arg: Parameters<T>) =>
-    new Promise((resolve: (value?: unknown | PromiseLike<unknown>) => void) => {
-      queue.push(run.bind(null, fn, resolve, ...arg));
+  const enqueue = (fn, resolve, args) => {
+    queue.push(run.bind(null, fn, resolve, ...args));
+    (async () => {
+      await Promise.resolve();
+
       if (activeCount < concurrency && queue.length) {
         queue.shift()();
       }
+    })();
+  };
+
+  const generator = (fn, ...args) =>
+    new Promise(resolve => {
+      enqueue(fn, resolve, args);
     });
 
-  return generator;
+  Object.defineProperties(generator, {
+    activeCount: {
+      get: () => activeCount,
+    },
+    pendingCount: {
+      get: () => queue.length,
+    },
+    clearQueue: {
+      value: () => {
+        queue.length = 0;
+      },
+    },
+  });
+
+  return generator as LimitFunction;
 }
 
 export default pLimit;

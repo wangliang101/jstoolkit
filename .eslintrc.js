@@ -31,5 +31,6 @@ module.exports = {
       },
     ],
     'operator-linebreak': 0,
+    'no-plusplus': 0,
   },
 };
