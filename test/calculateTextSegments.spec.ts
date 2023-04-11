@@ -23,11 +23,11 @@ const segmentA = [
 // ];
 
 const textStyle = {
-  fontFamily: `'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif`,
+  fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
   fontSize: 14,
 };
 
-test('isType string', () => {
+test('isType string', async () => {
   expect(calculateTextSegments(segmentA, 132, 500, 800, textStyle)).toEqual([
     {
       heigit: 132,
