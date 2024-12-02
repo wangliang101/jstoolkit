@@ -85,7 +85,7 @@ function calculateTextSegments(textList, remainingHeight, maxHeight, width, text
     }
   }
   // 将最后一行加入结果
-  let curDiv = result[divIndex];
+  const curDiv = result[divIndex];
   curDiv.content.push(curLine);
   curDiv.height += curLineH;
   destoryMeasureNode();

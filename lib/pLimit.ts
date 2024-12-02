@@ -40,7 +40,7 @@ function pLimit(concurrency: number): LimitFunction {
     try {
       await result;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
     next();
   };
